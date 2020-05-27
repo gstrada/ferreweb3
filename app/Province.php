@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property integer $id
@@ -13,13 +15,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $updated_at
  * @property string $deleted_at
  * @property Country $country
- * @property Department[] $departments
+ * @property City[] $cities
  */
 class Province extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -30,7 +32,7 @@ class Province extends Model
     protected $fillable = ['country_id', 'name', 'observations', 'created_at', 'updated_at', 'deleted_at'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function country()
     {
@@ -38,10 +40,10 @@ class Province extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
-    public function departments()
+    public function cities()
     {
-        return $this->hasMany('App\Department');
+        return $this->hasMany('App\City');
     }
 }

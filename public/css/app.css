@@ -11363,15 +11363,135 @@ a.text-dark:focus {
     display: flex;
     width: 100%;
 }
-
-#sidebar {
-    width: 100%;
-    min-height: 90vh !important;
-    box-shadow: 1px 0px 5px grey;
+.main-container{
+    padding-top: 66px;
+    display: flex;
 }
+.sidebar {
+    width: 100%;
+    min-height: 100vh !important;
+    box-shadow: 1px 0px 5px grey;
+    position: fixed;
+}
+
+.right-panel{
+    position: relative;
+    left: 21%;
+    width: 100%;
+}
+.sidebar-item{
+    text-decoration: none !important;
+    color: black !important;
+}
+.delete-icon{
+    text-decoration: none;
+    color: red !important;
+}
+
 #adminCentral {
     min-height: 90vh !important;
     background-color: #fafafa;
     width: 100%;
 }
+.bg-login {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: url('/images/bg_login_register.jpg');
+}
+.container-login {
+    width: 60% !important;
+    padding-top: 80px !important;
+    background-color: transparent !important;
 
+}
+.top-menu-bar{
+    height: 70px !important;
+    display: none !important;
+}
+@media (max-width: 1000px) {
+    .main-container{
+        margin-top: 0px;
+        display: block;
+    }
+    .container-login {
+        width: 90% !important;
+        padding-top: 40px !important;
+    }
+    .sidebar {
+        display: none !important;
+    }
+    .top-menu-bar{
+
+        padding: 0 0 0 0;
+        margin-top: 70px;
+        height: 40px !important;
+        display: inline-flex !important;
+    }
+    .col-top-bar > button{
+        color: white !important;
+    }
+    .top-menu-bar > div{
+        width: 100% !important;
+    }
+    .col-top-bar{
+        text-align: center;
+    }
+
+    .right-panel{
+        position: relative;
+        left: 0px !important;
+        width: 100%;
+    }
+
+}
+@media (max-width: 1000px) {
+    .main-container{
+        margin-top: 30px;
+    }
+}
+.btn-login {
+    margin-bottom: 2px !important;
+}
+.navbar-custom-text{
+    color: white !important;
+}
+.table-custom td, .table-custom th {
+    text-align: left !important;
+}
+
+
+
+.table-custom thead {
+    display: table; /* to take the same width as tr */
+    width: calc(100% - 17px); /* - 17px because of the scrollbar width */
+}
+
+.table-custom tbody {
+    display: block; /* to enable vertical scrolling */
+    max-height: 250px; /* e.g. */
+    overflow-y: scroll; /* keeps the scrollbar even if it doesn't need it; display purpose */
+}
+
+/*th, td {*/
+/*    width: 33.33%; !* to enable "word-break: break-all" *!*/
+/*    padding: 5px;*/
+/*    word-break: break-all; !* 4. *!*/
+/*}*/
+
+.table-custom tr {
+    display: table; /* display purpose; th's border */
+    width: calc(100% - 3px);
+    box-sizing: border-box; /* because of the border (Chrome needs this line, but not FF) */
+}
+
+.th-td-custom-1{
+    width: 300px !important;
+}
+.th-td-custom-2{
+    width: 600px !important;
+}
+.th-td-custom-3{
+    width: 100px !important;
+}

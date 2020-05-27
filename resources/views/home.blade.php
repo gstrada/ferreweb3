@@ -1,45 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid" style="margin-top: 66px">
-        <div class="row">
-            <div class="col-md-2" id="sidebar">
-                <div style="width: 100%; text-align: center">
-                    <hr>
-                    <h3>Menu</h3>
-                    <hr>
-                </div>
-                <div>
-                    <a class="dropdown-item" href="#"><i class="fas fa-user-circle"></i> Usuarios</a>
-                </div>
-                <br>
-                <div>
-                    <a class="dropdown-item" href="#"><i class="fas fa-users"></i> Clientes</a>
-                </div>
-                <br>
-                <div>
-                    <a class="dropdown-item" href="#"><i class="fas fa-user-tie"></i> Proveedores</a>
-                </div>
-                <br>
-                <div>
-                    <a class="dropdown-item" href="#"><i class="fas fa-cubes"></i> Stock</a>
-                </div>
-                <br>
-                <div>
-                    <a class="dropdown-item" href="#"><i class="fas fa-money-bill-alt"></i> Caja</a>
-                </div>
-                <br>
-            </div>
-            <div class="col-md-10">
+    <div class="container-fluid main-container">
+        <div class="row" style="width: 90%">
+            @include('partials/sidebar')
+            <div class="col-md-11 right-panel">
+                @php(
+  alert()->warning('WarningAlert','Lorem ipsum dolor sit amet.')
+)
                 <div class="container">
-                    <div class="row"  style="text-align: center">
+                    <div class="row" style="text-align: center">
                         <div class="col-md-12">
                             <hr>
                             <h3>Búsqueda rápida</h3>
                             <hr>
                         </div>
-                        <div class="col-md-12" style="text-align: center">
-                            <input type="text" style="width: 70%; ">
+                        <div class="col-md-12" align="center">
+                            <input class="form-control" type="text" style="width: 70%; ">
                         </div>
                     </div>
                 </div>
@@ -50,6 +27,7 @@
 @push('custom-scripts')
     <script>
         $(document).ready(function () {
+            var alt = $('#demo').css('display');
 
         })
     </script>
