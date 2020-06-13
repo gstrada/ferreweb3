@@ -31,12 +31,17 @@ class SellerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param Request $request
+     * @return void
      */
     public function store(Request $request)
     {
-        //
+        $seller = new Seller();
+        $seller->name = $request->sls_name;
+        $seller->email = $request->sls_mail;
+        $seller->phone = $request->sls_phone;
+        $seller->observations = $request->sls_obs;
+        $seller->save();
     }
 
     /**
@@ -64,7 +69,7 @@ class SellerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  \App\Seller  $seller
      * @return Response
      */
