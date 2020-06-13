@@ -35,3 +35,4 @@ Route::get('/proveedores', 'SupplierController@index')->name('suppliers');
 Route::get('/proveedores/vendedores', 'SupplierController@salesmenIndex')->name('suppliers.salesmen');
 
 //Provincias
+Route::post('proveedores/ciudades', 'CitiesController@getCitiesByProvinceId')->name('province.cities');

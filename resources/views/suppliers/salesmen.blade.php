@@ -40,10 +40,10 @@
                                                    class="form-control" required>
                                         </div>
                                         <div class="col-md-3" style="padding-bottom: 10px">
-                                            <select name="sls_prov" id="sls_prov" type="text" class="form-control" onchange="getCities(this.value, 'sls_city')" required>
+                                            <select name="sls_prov" id="sls_prov" type="text" class="form-control" onchange="getCities(this.value, '{{ csrf_token() }}', 'sls_city')" required>
                                                 <option value="0">Seleccionar provincia</option>
                                                 @foreach($provinces as $province)
-                                                    <option value="{{ $province->cities->sortBy('name')->pluck('name','id') }}">{{ $province->name }}</option>
+                                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -106,9 +106,9 @@
         </div>
     </div>
 @endsection
+@include('partials.custom-scripts')
 @push('custom-scripts')
-    <script src="{{ asset('js/custom-scripts.js') }}">
-    </script>
+
 @endpush
 
 

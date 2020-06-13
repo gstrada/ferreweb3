@@ -17,6 +17,7 @@
         "yajra/laravel-datatables-oracle": "^9.9"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.3",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.9.1",
         "krlove/eloquent-model-generator": "^1.3",

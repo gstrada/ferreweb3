@@ -46,4 +46,14 @@ class Province extends Model
     {
         return $this->hasMany('App\City');
     }
+
+    /**
+     * @param $id
+     * @return void | mixed
+     */
+    public function getCities($id) {
+
+        return City::all()->where('province_id', $id)->sortBy('name')->toArray();
+
+    }
 }
