@@ -9,7 +9,7 @@
                     <div class="row" style="text-align: center">
                         <div class="col-md-12">
                             <hr>
-                            <h3>Agregar ítems</h3>
+                            <h3>Agregar artículo</h3>
                             <hr>
                         </div>
                         <div class="col-md-12" style="text-align: left">
@@ -48,8 +48,12 @@
                                                 href="{{route('stock.brands')}}" style="text-decoration: none; color: white"><button type="button" class="btn btn-secondary" title="Agregar nueva marca"><i class="fa fa-plus-square"></i></button>
                                             </a>
                                         </div>
-                                        <div class="col-md-6" style="padding-bottom: 10px">
+                                        <div class="col-md-2" style="padding-bottom: 10px">
                                             <input name="item_code" id="item_code" placeholder="Código" type="text"
+                                                   class="form-control" required>
+                                        </div>
+                                        <div class="col-md-4" style="padding-bottom: 10px">
+                                            <input name="item_code" id="item_code" placeholder="Código de barras" type="text"
                                                    class="form-control" required>
                                         </div>
                                         <div class="col-md-6" style="padding-bottom: 10px">
@@ -110,6 +114,10 @@
                                         <div class="col-md-3" style="padding-bottom: 10px">
                                             <input name="item_code" id="item_code" placeholder="Precio final" type="number"
                                                    class="form-control" readonly required>
+                                        </div>
+                                        <div class="col-md-12" style="padding-bottom: 10px">
+                                            <textarea name="add_item_obs" id="add_item_obs" placeholder="Observaciones" type="text"
+                                                      class="form-control"></textarea>
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px; text-align: center">
                                             <button type="submit" class="btn btn-success" name="brn-desc" id="cat-desc"

@@ -2,20 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Province;
 use App\Seller;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\View\View;
 
 class SellerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return void
+     * @return Application|Factory|View
      */
     public function index()
     {
-        //
+        $salesman_list = Seller::all()->where('deleted_at', null);
+        $provinces = Province::get();
+        return view('suppliers.salesmen', compact('salesman_list', 'provinces'));
     }
 
     /**

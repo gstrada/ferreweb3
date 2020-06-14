@@ -32,7 +32,9 @@ Route::post('/stock/rubros/update', 'CategoriesController@update')->name('stock.
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 //Proveedores
 Route::get('/proveedores', 'SupplierController@index')->name('suppliers');
-Route::get('/proveedores/vendedores', 'SupplierController@salesmenIndex')->name('suppliers.salesmen');
+Route::post('/proveedores', 'SupplierController@store')->name('suppliers.store');
+Route::get('/proveedores/vendedores', 'SellerController@index')->name('suppliers.salesmen');
+Route::post('/proveedores/vendedores', 'SellerController@store')->name('suppliers.salesmen.store');
 
 //Provincias
 Route::post('proveedores/ciudades', 'CitiesController@getCitiesByProvinceId')->name('province.cities');

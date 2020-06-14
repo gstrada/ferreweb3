@@ -20,7 +20,9 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        return view('suppliers.suppliers');
+        $salesmen = Seller::get();
+        $provinces = Province::get();
+        return view('suppliers.suppliers', compact('salesmen', 'provinces'));
     }
 
     /**
@@ -32,20 +34,6 @@ class SupplierController extends Controller
     {
         $provinces = Province::get();
         return view('suppliers.salesmen', compact('provinces'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @param Request $request
-     * @return void
-     */
-    public function storeSalesman(Request $request)
-    {
-        $seller = new Seller();
-        $seller->name = $request->sup_name;
-
-
     }
 
     /**

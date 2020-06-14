@@ -44,16 +44,25 @@
                                                    class="form-control" required>
                                         </div>
                                         <div class="col-md-3" style="padding-bottom: 10px">
-                                            <input name="sup_prov" id="sup_prov" placeholder="Provincia" type="text"
-                                                   class="form-control" required>
+                                            <select name="sup_prov" id="sup_prov" type="text" class="form-control" onchange="getCities(this.value, '{{ csrf_token() }}', 'sup_city')" required>
+                                                <option value="0">Seleccionar provincia</option>
+                                                @foreach($provinces as $province)
+                                                    <option value="{{ $province->id }}">{{ $province->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="col-md-3" style="padding-bottom: 10px">
-                                            <input name="sup_city" id="sup_city" placeholder="Ciudad" type="text"
-                                                   class="form-control" required>
+                                            <select name="sup_city" id="sup_city" disabled type="text" class="form-control" required>
+                                                <option value="">Seleccionar ciudad</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-5" style="padding-bottom: 10px">
-                                            <input name="sup_salesman" id="sup_salesman" placeholder="Vendedor" type="text"
-                                                   class="form-control" required>
+                                            <select name="sup_salesman" id="sup_salesman" type="text" class="form-control" >
+                                                <option value="0">Seleccionar vendedor</option>
+                                                @foreach($salesmen as $salesman)
+                                                    <option value="{{ $salesman->id }}">{{ $salesman->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         <div class="col-md-1" style="padding-bottom: 10px">
                                             <a
@@ -62,15 +71,15 @@
                                         </div>
                                         <div class="col-md-4" style="padding-bottom: 10px">
                                             <input name="sup_mail" id="sup_mail" placeholder="Correo electrónico" type="email"
-                                                   class="form-control" required>
+                                                   class="form-control" >
                                         </div>
                                         <div class="col-md-2" style="padding-bottom: 10px">
                                             <input name="sup_phone" id="sup_phone" placeholder="Teléfono" type="text"
-                                                   class="form-control" required>
+                                                   class="form-control" >
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px">
                                             <textarea name="sup_obs" id="sup_obs" placeholder="Observaciones" type="text"
-                                                      class="form-control" required></textarea>
+                                                      class="form-control" ></textarea>
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px; text-align: center">
                                             <button type="submit" class="btn btn-success" name="cat-desc" id="cat-desc"
@@ -122,6 +131,7 @@
         </div>
     </div>
 @endsection
+@include('partials.custom-scripts')
 @push('custom-scripts')
     <script>
         $(document).ready(function () {

@@ -13,7 +13,7 @@
                             <hr>
                         </div>
                         <div class="col-md-12" style="text-align: left">
-                            <form action="" style="width: 100%" method="post">
+                            <form action="{{ route('suppliers.salesmen.store') }}" style="width: 100%" method="post">
                                 @csrf
 
                                 <div class="container-fluid">
@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px">
                                             <textarea name="sls_obs" id="sls_obs" placeholder="Observaciones" type="text"
-                                                      class="form-control" required></textarea>
+                                                      class="form-control"></textarea>
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px; text-align: center">
                                             <button type="submit" class="btn btn-success" name="cat-desc" id="cat-desc"
@@ -69,33 +69,37 @@
                         <div class="col-md-12"
                              style="max-height: 290px; overflow-x: auto; overflow-y: hidden">
                             <div style="width: 1000px !important;">
-                                <table class="table table-striped table-custom" id="categories-table">
+                                <table class="table table-striped table-custom" id="salesmen-table">
                                     <thead>
                                     <tr>
                                         <th class="th-td-custom-1">Nombre</th>
-                                        <th class="th-td-custom-2">Descripción</th>
+                                        <th class="th-td-custom-2">Correo Electrónico</th>
                                         <th class="th-td-custom-3">Opciones</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {{--                                    @foreach($category_list as $category)--}}
-                                    {{--                                        <tr>--}}
-                                    {{--                                            <td class="th-td-custom-1">{{$category->name}}</td>--}}
-                                    {{--                                            <td class="th-td-custom-2">{{$category->description}}</td>--}}
-                                    {{--                                            <td class="th-td-custom-3" align="center">--}}
-                                    {{--                                                <div class="row">--}}
-                                    {{--                                                    <div class="col-sm-6" style="padding-left:0px">--}}
-                                    {{--                                                        <a href= "{{ route('stock.categories.edit', $category->id) }}" class="btn ">--}}
-                                    {{--                                                            <i class="fas fa-pencil-alt" title="Editar"></i>--}}
-                                    {{--                                                        </a>--}}
-                                    {{--                                                    </div>--}}
-                                    {{--                                                    <div class="col-sm-6" style="padding-left:0px"><button  class="btn delete-icon" onclick="show_modal('{{$category->name}}', '{{csrf_token()}}')"><i--}}
-                                    {{--                                                                class="fas fa-trash-alt" title="Eliminar"></i></button>--}}
-                                    {{--                                                    </div>--}}
-                                    {{--                                                </div>--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                        </tr>--}}
-                                    {{--                                    @endforeach--}}
+                                    @foreach($salesman_list as $salesman)
+                                        <tr>
+                                            <td class="th-td-custom-1">{{$salesman->name}}</td>
+                                            <td class="th-td-custom-2">{{$salesman->email}}</td>
+                                            <td class="th-td-custom-3" align="center">
+                                                <div class="row">
+                                                    <div class="col-sm-6" style="padding-left:0px">
+                                                        <a href=""
+                                                           class="btn ">
+                                                            <i class="fas fa-pencil-alt" title="Editar"></i>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-sm-6" style="padding-left:0px">
+                                                        <button class="btn delete-icon"
+                                                                >
+                                                            <i
+                                                                class="fas fa-trash-alt" title="Eliminar"></i></button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
