@@ -66,17 +66,20 @@
                                         </div>
                                         <div class="col-md-1" style="padding-bottom: 10px">
                                             <a
-                                                href="{{ route('suppliers.salesmen') }}" style="text-decoration: none; color: white"><button type="button" class="btn btn-secondary" title="Agregar vendedor"><i class="fa fa-plus-square"></i></button>
+                                                href="{{ route('suppliers.salesmen') }}" style="text-decoration: none; color: white; height: 100%">
+                                                <button type="button" class="btn btn-secondary" title="Agregar vendedor" style="height: 100%">
+                                                    <i class="fa fa-plus-square"></i>
+                                                </button>
                                             </a>
                                         </div>
-                                        <div class="col-md-4" style="padding-bottom: 10px">
-                                            <input name="sup_mail" id="sup_mail" placeholder="Correo electrónico" type="email"
-                                                   class="form-control" >
-                                        </div>
-                                        <div class="col-md-2" style="padding-bottom: 10px">
-                                            <input name="sup_phone" id="sup_phone" placeholder="Teléfono" type="text"
-                                                   class="form-control" >
-                                        </div>
+{{--                                        <div class="col-md-4" style="padding-bottom: 10px">--}}
+{{--                                            <input name="sup_mail" id="sup_mail" placeholder="Correo electrónico" type="email"--}}
+{{--                                                   class="form-control" >--}}
+{{--                                        </div>--}}
+{{--                                        <div class="col-md-2" style="padding-bottom: 10px">--}}
+{{--                                            <input name="sup_phone" id="sup_phone" placeholder="Teléfono" type="text"--}}
+{{--                                                   class="form-control" >--}}
+{{--                                        </div>--}}
                                         <div class="col-md-12" style="padding-bottom: 10px">
                                             <textarea name="sup_obs" id="sup_obs" placeholder="Observaciones" type="text"
                                                       class="form-control" ></textarea>

@@ -15,14 +15,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property integer $supplier_id_3
  * @property integer $supplier_id_4
  * @property string $barcode
+ * @property string $code
  * @property string $name
  * @property string $description
  * @property float $stock
  * @property string $photo
  * @property float $cost
- * @property float $charge
+ * @property float $discount
  * @property float $profit
  * @property float $iva
+ * @property float $final_price
  * @property string $observations
  * @property string $created_at
  * @property string $updated_at
@@ -47,7 +49,29 @@ class Item extends Model
     /**
      * @var array
      */
-    protected $fillable = ['measurement_unit_id', 'category_id', 'brand_id', 'supplier_id_1', 'supplier_id_2', 'supplier_id_3', 'supplier_id_4', 'barcode', 'name', 'description', 'stock', 'photo', 'cost', 'charge', 'profit', 'iva', 'observations', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = [
+        'measurement_unit_id',
+        'category_id',
+        'brand_id',
+        'supplier_id_1',
+        'supplier_id_2',
+        'supplier_id_3',
+        'supplier_id_4',
+        'code',
+        'barcode',
+        'name',
+        'description',
+        'stock',
+        'photo',
+        'cost',
+        'discount',
+        'profit',
+        'iva',
+        'final_price',
+        'observations',
+        'created_at',
+        'updated_at',
+        'deleted_at'];
 
     /**
      * @return BelongsTo

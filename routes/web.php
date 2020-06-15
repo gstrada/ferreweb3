@@ -35,6 +35,10 @@ Route::get('/proveedores', 'SupplierController@index')->name('suppliers');
 Route::post('/proveedores', 'SupplierController@store')->name('suppliers.store');
 Route::get('/proveedores/vendedores', 'SellerController@index')->name('suppliers.salesmen');
 Route::post('/proveedores/vendedores', 'SellerController@store')->name('suppliers.salesmen.store');
+//Configuraciones
+Route::get('/configs/unidades-medida', 'MeasurementUnitController@index')->name('configs.m-units');
+Route::post('/configs/unidades-medida', 'MeasurementUnitController@store')->name('configs.m-units.store');
+
 
 //Provincias
 Route::post('proveedores/ciudades', 'CitiesController@getCitiesByProvinceId')->name('province.cities');

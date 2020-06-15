@@ -7,6 +7,7 @@ use App\Seller;
 use App\Supplier;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -39,12 +40,23 @@ class SupplierController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return Response
+     * @param Request $request
+     * @return RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $supplier = new Supplier();
+        $supplier->business_name = $request->sup_name;
+        $supplier->cuit = $request->sup_cuit;
+        $supplier->address_street = $request->sup_street;
+        $supplier->address_number = $request->sup_address_number;
+        $supplier->city_id = $request->sup_city;
+        $supplier->email = $request->sup_mail;
+        $supplier->phone = $request->sup_phone;
+        $supplier->observations = $request->sup_obs;
+        $supplier->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -72,7 +84,7 @@ class SupplierController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  \App\Supplier  $supplier
      * @return Response
      */

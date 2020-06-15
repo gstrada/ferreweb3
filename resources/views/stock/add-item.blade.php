@@ -19,12 +19,11 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-md-5" style="padding-bottom: 10px">
-                                            <select name="item_supplier_1" id="item_supplier_1"
-                                                    placeholder="Proveedor 1" type="text"
+                                            <select name="item_cat" id="item_cat" type="text"
                                                     class="form-control">
                                                 <option value="">Seleccione la categoría</option>
                                                 @foreach($categories as $category)
-                                                    <option value="">{{$category->name}}</option>
+                                                    <option value="{{$category->id}}">{{$category->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -34,12 +33,11 @@
                                             </a>
                                         </div>
                                         <div class="col-md-5" style="padding-bottom: 10px">
-                                            <select name="item_supplier_1" id="item_supplier_1"
-                                                    placeholder="Proveedor 1" type="text"
+                                            <select name="item_brand" id="item_brand" type="text"
                                                     class="form-control">
                                                 <option value="">Seleccione la marca</option>
                                                 @foreach($brands as $brand)
-                                                    <option value="">{{$brand->name}}</option>
+                                                    <option value="{{$brand->id}}">{{$brand->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -50,14 +48,14 @@
                                         </div>
                                         <div class="col-md-2" style="padding-bottom: 10px">
                                             <input name="item_code" id="item_code" placeholder="Código" type="text"
-                                                   class="form-control" required>
+                                                   class="form-control" >
                                         </div>
                                         <div class="col-md-4" style="padding-bottom: 10px">
-                                            <input name="item_code" id="item_code" placeholder="Código de barras" type="text"
-                                                   class="form-control" required>
+                                            <input name="item_barcode" id="item_barcode" placeholder="Código de barras" type="text"
+                                                   class="form-control" >
                                         </div>
                                         <div class="col-md-6" style="padding-bottom: 10px">
-                                            <input name="item_nombre" id="item_nombre" placeholder="Nombre" type="text"
+                                            <input name="item_name" id="item_name" placeholder="Nombre" type="text"
                                                    class="form-control">
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px">
@@ -65,22 +63,31 @@
                                                    placeholder="Descripción" type="text"
                                                    class="form-control">
                                         </div>
-
                                         <div class="col-md-3" style="padding-bottom: 10px">
                                             <select name="item_supplier_1" id="item_supplier_1"
                                                     placeholder="Proveedor 1" type="text"
                                                     class="form-control">
-                                                <option value="">Proveedor</option>
+                                                <option value="">Seleccionar proveedor</option>
+                                                @foreach($suppliers as $supplier)
+                                                    <option value="{{ $supplier->id }}">{{$supplier->business_name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-1" style="padding-bottom: 10px">
-                                            <button type="button" class="btn btn-secondary" title="Agregar proveedor"><i class="fa fa-plus-square"></i></button>
+                                            <a
+                                                href="{{ route('suppliers') }}" style="text-decoration: none; color: white; height: 100%">
+                                                <button type="button" class="btn btn-secondary" title="Agregar proveedor" style="height: 100%">
+                                                    <i class="fa fa-plus-square"></i>
+                                                </button>
+                                            </a>
                                         </div>
                                         <div class="col-md-3" style="padding-bottom: 10px">
-                                            <select name="item_supplier_1" id="item_supplier_1"
-                                                    placeholder="Proveedor 1" type="text"
-                                                    class="form-control">
+                                            <select name="item_m_unit" id="item_m_unit" type="text"
+                                                    class="form-control" required>
                                                 <option value="">Unidad de medida</option>
+                                                @foreach($units as $unit)
+                                                    <option value="{{ $unit->id }}">{{$unit->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-1" style="padding-bottom: 10px">
@@ -96,23 +103,23 @@
                                             <iframe src="" frameborder="2" style="width: 200px;height: 200px; background-color: white"></iframe>
                                         </div>
                                         <div class="col-md-3" style="padding-bottom: 10px">
-                                            <input name="item_code" id="item_code" placeholder="Precio costo" type="number"
-                                                   class="form-control" required>
+                                            <input name="item_cost" id="item_cost" placeholder="Precio costo" type="number"
+                                                   min="0" step="0.1" class="form-control" onblur="finalPrice()" required>
                                         </div>
                                         <div class="col-md-2" style="padding-bottom: 10px">
-                                            <input name="item_code" id="item_code" placeholder="% iva" type="number"
-                                                   class="form-control" required>
+                                            <input name="item_iva" id="item_iva" placeholder="% iva" type="number"
+                                                   min="0" step="0.1" class="form-control" onblur="finalPrice()" required>
                                         </div>
                                         <div class="col-md-2" style="padding-bottom: 10px">
-                                            <input name="item_code" id="item_code" placeholder="%recargo" type="number"
-                                                   class="form-control" required>
+                                            <input name="item_discount" id="item_discount" placeholder="% descuento" type="number"
+                                                   min="0" step="0.1" class="form-control" onblur="finalPrice()" required>
                                         </div>
                                         <div class="col-md-2" style="padding-bottom: 10px">
-                                            <input name="item_code" id="item_code" placeholder="% ganancia" type="number"
-                                                   class="form-control" required>
+                                            <input name="item_profit" id="item_profit" placeholder="% ganancia" type="number"
+                                                   min="0" step="0.1" class="form-control" onblur="finalPrice()"  required>
                                         </div>
                                         <div class="col-md-3" style="padding-bottom: 10px">
-                                            <input name="item_code" id="item_code" placeholder="Precio final" type="number"
+                                            <input name="item_final_price" id="item_final_price" placeholder="Precio final" type="number"
                                                    class="form-control" readonly required>
                                         </div>
                                         <div class="col-md-12" style="padding-bottom: 10px">
@@ -169,6 +176,7 @@
         </div>
     </div>
 @endsection
+@include('partials.items-scripts')
 @push('custom-scripts')
     <script>
         $(document).ready(function () {

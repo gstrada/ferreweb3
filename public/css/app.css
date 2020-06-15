@@ -11370,8 +11370,10 @@ a.text-dark:focus {
 .sidebar {
     width: 100%;
     min-height: 100vh !important;
+    height: auto;
     box-shadow: 1px 0px 5px grey;
     position: fixed;
+    padding-left: 0;
 }
 
 .right-panel{
