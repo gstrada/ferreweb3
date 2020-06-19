@@ -56,13 +56,10 @@
                     url: 'https://cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json',
                     searchPlaceholder: "Buscar"
                 },
-                columnDefs: [
-                    {paddingLeft: "10px", targets: 0}
-                ],
                 columns: [
-                    {data: 'code', name: 'Code'},
-                    {data: 'name', name: 'Name'},
-                    {data: 'final_price', name: 'Final_price'},
+                    {data: 'code', name: 'Code', orderable: false},
+                    {data: 'name', name: 'Name', orderable: false},
+                    {data: 'final_price', name: 'Final_price', orderable: false},
                 ]
             })
         });
