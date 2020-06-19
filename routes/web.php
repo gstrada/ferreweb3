@@ -18,7 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//Stock
 Route::get('/stock/items', 'ItemController@index')->name('stock.items');
+Route::get('/datatables/items','DatatablesController@items')->name('datatables.items');
 Route::get('/stock/add-items', 'ItemController@addItems')->name('stock.add-items');
 Route::post('/stock/items/store', 'ItemController@store')->name('stock.items.store');
 Route::get('/stock/rubros', 'CategoriesController@index')->name('stock.categories');

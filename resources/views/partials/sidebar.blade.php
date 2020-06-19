@@ -38,7 +38,7 @@
             <div id="demo" class="collapse">
                 <div class="row">
                     <div class="col-md-12 offset-3" style="border-left: 1px solid black; height: 25px">
-                        <span><a href="{{route('stock.add-items')}}" class="sidebar-item">Artículos</a></span>
+                        <span><a href="{{route('stock.items')}}" class="sidebar-item">Artículos</a></span>
                     </div>
                     <div class="col-md-12 offset-3" style="border-left: 1px solid black; height: 25px">
                         <span><a href="{{route('stock.categories')}}" class="sidebar-item">Rubros</a></span>
