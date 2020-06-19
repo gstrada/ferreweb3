@@ -15,11 +15,11 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('datatables/dataTables.min.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('datatables/dataTables.min.css')}}">--}}
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
-    <script src="{{asset('datatables/jquery.dataTables.js')}}"></script>
+{{--    <script src="{{asset('datatables/jquery.dataTables.js')}}"></script>--}}
     <script src="{{asset('sweetAlert2/sweetalert2.all.min.js')}}"></script>
-    <script src="{{asset('datatables/dataTables.bootstrap4.js')}}"></script>
+{{--    <script src="{{asset('datatables/dataTables.bootstrap4.js')}}"></script>--}}
     <!--Import jQuery Library-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
